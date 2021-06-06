@@ -1,0 +1,37 @@
+* {
+    padding: auto;
+    margin: auto;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: honeydew;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightslategrey;
+    border-radius: 5px;
+    min-height: 30vh;
+    min-width: 10vh;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.form input{
+    margin: 10px;
+    padding: 20px;
+    font-size: large;
+    border-radius: 10px;
+}
