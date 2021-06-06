@@ -10,5 +10,5 @@ def index():
     else:
         link = request.form.get("video-link")
         yt = pytube.YouTube(link)
-        yt.streams.filter(progressive=True).first().download(max_retries=5)
+        yt.streams.filter(progressive=True).first().download('~/Downloads')
         return render_template('index.html')
