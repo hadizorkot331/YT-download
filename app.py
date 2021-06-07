@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 import pytube
-
+import os
 
 app = Flask(__name__)
 
@@ -11,5 +11,6 @@ def index():
     else:
         link = request.form.get("video-link")
         yt = pytube.YouTube(link)
-        yt.streams.filter(progressive=True).first().download()
+        home = os.path.expanduser("~")
+        yt.streams.filter(progressive=True).first().download(output_path=os.path.join(home, "Downloads"))
         return render_template('index.html')
