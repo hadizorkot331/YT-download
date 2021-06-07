@@ -12,5 +12,5 @@ def index():
         link = request.form.get("video-link")
         yt = pytube.YouTube(link)
         home = os.path.expanduser("~")
-        yt.streams.filter(progressive=True).first().download(output_path=os.path.join(home, "Downloads"))
-        return render_template('index.html')
+        video = yt.streams.filter(progressive=True).first().download(output_path=os.path.join(home, "Downloads"))
+        return send_file(video)
